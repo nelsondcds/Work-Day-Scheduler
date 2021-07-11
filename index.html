@@ -35,68 +35,93 @@
           <p class="time-block">9 AM</p>
         </div>
         <textarea class="col-sm-10" id="9"></textarea>
-        <button class="saveBtn col-sm-1" id="9"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="9"><i class="fas fa-save" id="9"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">10 AM</p>
         </div>
         <textarea class="col-sm-10" id="10"></textarea>
-        <button class="saveBtn col-sm-1" id="10"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="10"><i class="fas fa-save" id="10"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">11 AM</p>
         </div>
         <textarea class="col-sm-10" id="11"></textarea>
-        <button class="saveBtn col-sm-1" id="11"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="11"><i class="fas fa-save" id="11"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">12 PM</p>
         </div>
         <textarea class="col-sm-10" id="12"></textarea>
-        <button class="saveBtn col-sm-1" id="12"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="12"><i class="fas fa-save" id="12"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">1 PM</p>
         </div>
         <textarea class="col-sm-10" id="1"></textarea>
-        <button class="saveBtn col-sm-1" id="1"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="1"><i class="fas fa-save" id="1"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">2 PM</p>
         </div>
         <textarea class="col-sm-10" id="2"></textarea>
-        <button class="saveBtn col-sm-1" id="2"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="2"><i class="fas fa-save" id="2"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">3 PM</p>
         </div>
         <textarea class="col-sm-10" id="3"></textarea>
-        <button class="saveBtn col-sm-1" id="3"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="3"><i class="fas fa-save" id="3"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">4 PM</p>
         </div>
         <textarea class="col-sm-10" id="4"></textarea>
-        <button class="saveBtn col-sm-1" id="4"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="4"><i class="fas fa-save" id="4"></i></button>
       </div>
       <div class="row">
         <div class="hour col-sm-1">
           <p class="time-block">5 PM</p>
         </div>
         <textarea class="col-sm-10" id="5"></textarea>
-        <button class="saveBtn col-sm-1" id="5"><i class="fas fa-save"></i></button>
+        <button class="saveBtn col-sm-1" id="5"><i class="fas fa-save" id="5"></i></button>
       </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+      var hours = [9,10,11,12,13,14,15,16,17];
+      var hour = moment().hour();
+      for (var i = 0 ; i < hours.length ; i++) {
+        if (hours[i] == hour) {
+          if (hours[i] > 12){
+          hours[i] -= 12;
+          }
+          var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
+          textEl.className += " present"
+        } else if (hours[i] < hour) {
+          if (hours[i] > 12){
+          hours[i] -= 12;
+          }
+          var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
+          textEl.className += " past"
+        } else if (hours[i] > hour) {
+          if (hours[i] > 12){
+          hours[i] -= 12;
+          }
+          var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
+          textEl.className += " future"
+        }
+      }
+    </script>
   </body>
 </html>
