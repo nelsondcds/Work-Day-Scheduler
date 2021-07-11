@@ -103,23 +103,25 @@
       var hour = moment().hour();
       for (var i = 0 ; i < hours.length ; i++) {
         if (hours[i] == hour) {
-          if (hours[i] > 12){
-          hours[i] -= 12;
-          }
+          hours[i] = hourTrim(hours[i]);
           var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
           textEl.className += " present"
         } else if (hours[i] < hour) {
-          if (hours[i] > 12){
-          hours[i] -= 12;
-          }
+          hours[i] = hourTrim(hours[i]);
           var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
           textEl.className += " past"
         } else if (hours[i] > hour) {
-          if (hours[i] > 12){
-          hours[i] -= 12;
-          }
+          hours[i] = hourTrim(hours[i]);
           var textEl = document.querySelector("textarea[id='" + hours[i] + "']")
           textEl.className += " future"
+        }
+      }
+      function hourTrim(h) {
+        if (h > 12){
+          h -= 12;
+          return h;
+        } else {
+          return h;
         }
       }
     </script>
