@@ -1,6 +1,6 @@
 # Work-Day-Scheduler by Nelson Carlos Da Silva
 
-This repository contains my submission for the Web APIs Challenge: Code Quiz. The challenge consists of building a timed coding quiz with multiple-choice questions.
+This repository contains my submission for the Third-Party APIs Challenge: Work Day Scheduler. The challenge consists of creating a simple calendar application that allows a user to save events for each hour of the day.
 
 If you are seeking the commits and coresponding messages from my work on this challenge, those can be found at my repository, here:
 
